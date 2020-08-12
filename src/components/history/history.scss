@@ -1,0 +1,148 @@
+.conversions{
+    max-width: 600px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding:0;
+    .conversions__container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding:100px;
+        padding:80px 100px 100px 50px;
+
+        .conversions__table{
+            height:calc(100% - 80px);
+
+            .conversions__titleRow{
+                display:flex;
+                justify-content: space-between;
+                height:56px;
+                color:white;
+                font-size:16px;
+                font-weight:bold;
+                border-bottom:1px solid #F6F7F9;
+                >div{
+                    display:flex;
+                    width:33.3%;
+                    text-align:center;
+                    align-items:center;
+                }
+                .conversions__date{
+                    padding-left:14px;
+                    width:20%;
+                }
+                .conversions__before{
+                    position:relative;
+                    left:-10px;
+                }
+
+            }
+            .conversions__dataContainer{
+                > div:last-child{
+                    background-color:#96B7F2 !important;
+                    border-radius:0 !important;
+                    width:5px !important;
+                    right: -1px !important;
+                    top:-1px !important;
+                    > div{
+                        background-color:white !important;
+                    }
+                }
+                .conversions__dataRow{
+                    display:flex;
+                    justify-content: space-between;
+                    height:56px;
+                    color:white;
+                    font-size:16px;
+                    font-weight:bold;
+                    border-bottom:1px solid #F6F7F9;
+                    >div{
+                        display:flex;
+                        width:33.3%;
+                        text-align:center;
+                        align-items:center;
+                    }
+                    .conversions__date{
+                        padding-left:14px;
+                        font-weight:300;
+                        width:22%;
+                    }
+                    .conversions__before{
+                        font-weight:300;
+                        position:relative;
+                        padding-right:33px;
+                        justify-content: flex-end;
+                        svg{
+                            position: absolute;
+                            right: -15px;
+                            width: 30px;
+                        }
+                    }
+                    .conversions__after{
+                        font-weight:400;
+                        padding-right:19px;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .conversions__removeHistory{
+            bottom:47px;
+            position:absolute;
+            left:50%;
+            transform:translate(-50%,-50%);
+            cursor:pointer;
+            span{
+                color:white;
+                text-decoration:underline;
+            }
+        }
+        .conversions__noDataBox{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            p{
+                color:white;
+                font-size:16px;
+                letter-spacing:.8px;
+                line-height:22px;
+                font-weight:500;
+                display:inline-block;
+                align-self:center;
+            }
+        }
+        
+    }
+    .conversions__backButton{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 77px;
+        cursor:pointer;
+        
+        .conversions__wrapper{
+            width:100%;
+            height:100%;
+            position:relative;
+            
+            span {
+                letter-spacing: 0;
+                display: block;
+                color: white;
+                font-size: 20px;
+                line-height: 27px;
+                font-weight: 600;
+                width:77px;
+                position: absolute;
+                top: 109px;
+                left: -13%;
+                transform: rotate(90deg) translate(-50%, -50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+body{
+    background-color: #F5F5F5;
+    height: 100%;
+    padding:50px 0;
+    position:relative;
+
+    &:before{
+        content: '';
+        background: transparent linear-gradient(180deg, #3578EB 0%, #1C5CC5 100%) 0% 0% no-repeat padding-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 40%;
+    }
+    *{
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    @mixin dimensions{
+        height:100%;
+        width:100%;
+        display:block;
+    }
+
+    ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        @include dimensions;
+
+        li{
+            @include dimensions;
+
+        }
+    }
+    a{
+        color:initial;
+    }
+    a:hover{
+        text-decoration:none;
+    }
+}
+

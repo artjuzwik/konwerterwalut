@@ -1,0 +1,109 @@
+.container.main{
+    border-radius:15px;
+    margin:0 auto 0 auto;
+    background-color:transparent;
+    padding:0;
+    max-width:1200px;
+    height:654px;
+    position:relative;
+    
+    .main__nav{
+        display:flex;
+        width:77px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        
+        li{
+            position:relative;
+
+            .mainNav__title{
+                position: absolute;
+                top: 110px;
+                left: -13%;
+                transform: rotate(90deg) translate(-50%, -50%);
+                
+                a{
+                    letter-spacing:0;
+                    color:white;
+                    font-size:20px;
+                    line-height:27px;
+                    opacity:0.6;
+                    font-weight:600;
+                    display:block;
+                    width:77px;
+                }
+            }
+        }
+    }
+    
+    .main--blueBackground{
+        width:675px;
+        display:block;
+        background: transparent linear-gradient(180deg, #3578EB 0%, #1C5CC5 100%) 0% 0% no-repeat padding-box;
+        border-radius:15px;
+        // transition:width 1s ease;
+        position:relative;
+        
+
+        &.history{
+            max-width:1200px;
+            -webkit-animation: show 1s forwards; /* Safari 4+ */
+            -moz-animation:    show 1s forwards; /* Fx 5+ */
+            -o-animation:      show 1s forwards; /* Opera 12+ */
+            animation:         show 1s forwards;
+        }
+        &.historyHidden{
+            width:675px;
+            -webkit-animation: historyHidden 1s forwards; /* Safari 4+ */
+            -moz-animation:    historyHidden 1s forwards; /* Fx 5+ */
+            -o-animation:      historyHidden 1s forwards; /* Opera 12+ */
+            animation:         historyHidden 1s forwards;
+        }
+    }
+}
+.main{
+    .main--blueBackground.history{
+        > div{
+            justify-content: space-between !important;
+        }
+    }
+}
+.main--boxShadow{
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+@-webkit-keyframes show {
+    0%   { width:675px; }
+    100% { width:1200px; }
+}
+@-moz-keyframes show {
+    0%   { width:675px; }
+    100% { width:1200px; }
+  }
+@-o-keyframes show {
+    0%   { width:675px; }
+    100% { width:1200px; }
+}
+@keyframes show {
+    0%   { width:675px; }
+    100% { width:1200px; }
+}
+
+@-webkit-keyframes historyHidden {
+    0%   { width:1200px; }
+    100% { width:675px; }
+}
+@-moz-keyframes historyHidden {
+    0%   { width:1200px; }
+    100% { width:675px; }
+  }
+@-o-keyframes historyHidden {
+    0%   { width:1200px; }
+    100% { width:675px; }
+}
+@keyframes historyHidden {
+    0%   { width:1200px; }
+    100% { width:675px; }
+}
