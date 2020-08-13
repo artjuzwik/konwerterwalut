@@ -14,43 +14,27 @@ class TextInput extends React.Component {
         this.rerunValidation = this.rerunValidation.bind(this)
     }
     validateNumbers(value){
+        let targetValue = isNaN(value.trim());
 
-        let targetValue = value.trim();
-
-        if(targetValue === ''){
+        if(targetValue === false ){
             this.setState(state =>({
                 numberError:false
             }))
-            return true;          
-        }
-        if(targetValue.indexOf(' ') >= 0){
-            this.setState(state =>({
-                numberError:true
-            }))
-            return true;          
-        }
-
-        if(isNaN(targetValue) === true){
-            this.setState(state =>({
-                numberError:true
-            }))
-            return true;
+            return true; 
         }else{
             this.setState(state =>({
-                numberError:false
+                numberError:true
             }))
-            return false;
+            return false
         }
     }
+
     updateValues(val,bool){
-        let isNumeric = bool;
-                                
-        if(isNumeric){
-            this.props.updateContainerState('isValidNumbers',false)
-        }else{
-            let value = parseFloat(val);
+        if(bool){
+            this.props.updateContainerState('amountFrom',val)
             this.props.updateContainerState('isValidNumbers',true)
-            this.props.updateContainerState('amountFrom',value)
+        }else{
+            this.props.updateContainerState('isValidNumbers',false)
         }
     }
     rerunValidation(){
@@ -74,7 +58,11 @@ class TextInput extends React.Component {
                     component={this.props.component}
                     disabled={this.props.disabled}
                     placeholder={this.props.name === 'score' ? (this.props.amountTo ? this.props.amountTo : 'wynik') : (this.props.amountFrom ? this.props.amountFrom : 'Wpisz kwotę') }
+                    onKeyDown={e => {
+                        console.log(e.keyCode,'kicode',e.charCode,e.target.value)
+                    }}
                     onInput={(e)=>{
+                        
                         this.updateValues(e.target.value,this.validateNumbers(e.target.value))    
                     }} 
                 />

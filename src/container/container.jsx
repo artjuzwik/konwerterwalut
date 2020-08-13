@@ -72,9 +72,9 @@ class Container extends React.Component {
             })
     }
     saveToLocalStorage(){
+        
         let conversionsLengthCached = this.state.conversionsLength;
         let conversionsCurrent = this.state.conversions
-
         if(conversionsLengthCached !== conversionsCurrent.length){
             window.localStorage.setItem('conversions',JSON.stringify(conversionsCurrent))
             this.setState((state) => ({

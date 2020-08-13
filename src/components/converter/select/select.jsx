@@ -10,7 +10,6 @@ class TheSelect extends React.Component {
         this.state = {
             selectOptions:null,
         }
-        this.selectRef = React.createRef()
         this.buildSelectOptions = this.buildSelectOptions.bind(this)
     }
     buildSelectOptions(values){
@@ -22,20 +21,15 @@ class TheSelect extends React.Component {
         }
         return options
     }
-    setOptionsToState(options){
-        this.setState((state) => ({
-            selectOptions:options
-        }))
-    }
     componentDidUpdate(prevProps){
         if(this.props.currencies !== prevProps.currencies){
-            this.setOptionsToState(this.buildSelectOptions(this.props.currencies))
+            this.setState((state) => ({selectOptions:this.buildSelectOptions(this.props.currencies)}))
             selectOptionFlag = true
         }
     }
     componentDidMount(){
         if(selectOptionFlag){
-            this.setOptionsToState(this.buildSelectOptions(this.props.currencies))
+            this.setState((state) => ({selectOptions:this.buildSelectOptions(this.props.currencies)}))
         }
     }
     render(){

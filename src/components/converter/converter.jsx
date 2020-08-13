@@ -102,7 +102,6 @@ class Converter extends React.Component {
                                 <TextInput
                                     name={'amount'}
                                     component={'input'}
-                                    disabled={false}
                                     currencyFrom={this.props.currencyFrom}
                                     amountFrom={this.props.amountFrom}
                                     updateContainerState={this.props.updateContainerState}
